@@ -20,7 +20,7 @@ if (!process.env.DATABASE_URL) {
     database: "testresultsanalyzerstgrds",
     entities: [User],
     /* eslint-disable-next-line @typescript-eslint/no-unsafe-function-type */
-    // migrations: classLoader("migrations") as Function[],
+    migrations: classLoader("migrations") as Function[],
     logging: false,
     synchronize: false,
     migrationsRun: false,
@@ -33,7 +33,7 @@ if (!process.env.DATABASE_URL) {
     url: process.env.DATABASE_URL.replace("?sslmode=require", ""),
     entities: [User],
     /* eslint-disable-next-line @typescript-eslint/no-unsafe-function-type */
-    // migrations: classLoader("migrations") as Function[],
+    migrations: classLoader("migrations") as Function[],
     logging: false,
     synchronize: false,
     migrationsRun: false,
