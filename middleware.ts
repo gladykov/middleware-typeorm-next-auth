@@ -3,6 +3,8 @@ export { auth as middleware } from "@/auth"
 
 
 /* Code below will work if uncommented, and auth will be commented */
+
+
 // import { NextResponse } from 'next/server'
 // import type { NextRequest } from 'next/server'
 //
