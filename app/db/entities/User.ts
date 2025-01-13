@@ -1,0 +1,16 @@
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+
+@Entity()
+export class User {
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
+
+  @Column()
+  name: string;
+
+  @Column({ nullable: true })
+  saltedToken: string;
+
+  @Column({ nullable: true })
+  salt: string;
+}

@@ -1,0 +1,14 @@
+services:
+    postgres:
+        image: postgres:17-alpine
+        environment:
+        - POSTGRES_USER=testresultsanalyzer
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=testresultsanalyzerstgrds
+        ports:
+            - "5432:5432"
+        healthcheck:
+            test: pg_isready
+            interval: 10s
+            timeout: 5s
+            retries: 5
