@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import path from "node:path";
 
 const nextConfig: NextConfig = {
   serverExternalPackages: ["typeorm"],
@@ -7,17 +8,13 @@ const nextConfig: NextConfig = {
     serverMinification: false,
   },
 
-  // webpack(config) {
-  //   config.resolve.fallback = {
-  //
-  //     // if you miss it, all the other options in fallback, specified
-  //     // by next.js will be dropped.
-  //     ...config.resolve.fallback,
-  //
-  //     fs: false, // the solution
-  //   };
-  //   return config;
-  // },
+  webpack(config) {
+      config.resolve.alias = {
+          ...config.resolve.alias,
+          typeorm: path.resolve(__dirname, './app/compatible/typeorm.ts'),
+      };
+    return config;
+  },
 };
 
 export default nextConfig;
